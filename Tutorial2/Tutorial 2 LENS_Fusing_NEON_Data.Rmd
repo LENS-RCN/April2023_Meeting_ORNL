@@ -63,7 +63,8 @@ NEONsiteshp <- terra::vect(file.path(root_folder,"Data/TerrestrialSamplingBounda
 NEONTOSshp <- terra::vect(file.path(root_folder,"Data/All_NEON_TOS_Plot_Centroids_V9/All_NEON_TOS_Plot_Centroids_V9.shp"))
 # Read in GRSM roads shapefile as a spatial polygons vector. 
 GRSMlinearshp <- terra::vect(file.path(root_folder,"Data/GRSM_linear_features/linear_features.shp"))
-# Plot these shapefiles together
+# Plot these shapefiles together - note run all these three lines at once
+####specify xlim
 plot(GRSMlinearshp)
 plot(NEONsiteshp, add=TRUE, col="#999999")
 plot(NEONTOSshp, add=TRUE, col="#E69F00")
