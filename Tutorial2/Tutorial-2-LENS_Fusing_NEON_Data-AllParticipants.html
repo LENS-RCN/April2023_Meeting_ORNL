@@ -456,7 +456,8 @@ library(rgeos)
 library(tidyverse)</code></pre>
 <p>First, let’s visualize the GRSM LiDAR data based on a hillshade
 raster made from the ground elevation data product. NEON has a great
-tutorial on how to generate such a map <a href="https://www.neonscience.org/resources/learning-hub/tutorials/da-viz-neon-lidar-co13flood-r">here</a>.</p>
+tutorial on how to generate such a map <a href="https://www.neonscience.org/resources/learning-hub/tutorials/da-viz-neon-lidar-co13flood-r">here</a>.
+Note this step might take a bit of time.</p>
 <pre class="r"><code># Read in the hillshade map (i.e., digital elevation model) generated from the NEON LiDAR data
 dem &lt;- terra::rast(file.path(root_folder,&quot;Data/finalGRSM.TIF&quot;))
 # Plot the hillshade map of the GRSM site
@@ -475,7 +476,7 @@ NEONTOSshp &lt;- terra::vect(file.path(root_folder,&quot;Data/All_NEON_TOS_Plot_
 GRSMlinearshp &lt;- terra::vect(file.path(root_folder,&quot;Data/GRSM_linear_features/linear_features.shp&quot;))
 # Plot these shapefiles together - note run all these three lines at once
 ####specify xlim
-plot(GRSMlinearshp)
+plot(GRSMlinearshpy, ylim=c(35.55, 35.75), xlim=c(-83.7,-83.3)
 plot(NEONsiteshp, add=TRUE, col=&quot;#999999&quot;)
 plot(NEONTOSshp, add=TRUE, col=&quot;#E69F00&quot;)</code></pre>
 <p>Note here that the roads layer does not completely cover the spatial
